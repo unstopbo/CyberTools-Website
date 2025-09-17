@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberTools - Your Cybersecurity Toolkit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <h1>CyberTools</h1>
+            </div>
+            <nav class="nav">
+                <button class="nav-btn active" data-section="tools">
+                    <i class="fas fa-tools"></i> Tools
+                </button>
+                <button class="nav-btn" data-section="favorites">
+                    <i class="fas fa-heart"></i> Favorites
+                </button>
+                <button class="nav-btn" data-section="submit">
+                    <i class="fas fa-plus"></i> Submit Tool
+                </button>
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Tools Section -->
+            <section id="tools-section" class="section active">
+                <div class="search-filter-bar">
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search tools...">
+                    </div>
+                    <div class="filter-container">
+                        <select id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="network-scanning">Network Scanning</option>
+                            <option value="vulnerability-scanning">Vulnerability Scanning</option>
+                            <option value="penetration-testing">Penetration Testing</option>
+                            <option value="forensics">Digital Forensics</option>
+                            <option value="osint">OSINT</option>
+                            <option value="reverse-engineering">Reverse Engineering</option>
+                            <option value="web-security">Web Security</option>
+                            <option value="malware-analysis">Malware Analysis</option>
+                            <option value="cryptography">Cryptography</option>
+                            <option value="wireless-security">Wireless Security</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="tools-grid" id="tools-grid">
+                    <!-- Tools will be dynamically loaded here -->
+                </div>
+            </section>
+
+            <!-- Favorites Section -->
+            <section id="favorites-section" class="section">
+                <h2>Your Favorite Tools</h2>
+                <div class="tools-grid" id="favorites-grid">
+                    <!-- Favorite tools will be displayed here -->
+                </div>
+            </section>
+
+            <!-- Submit Tool Section -->
+            <section id="submit-section" class="section">
+                <h2>Submit a New Tool</h2>
+                <form id="submit-form" class="submit-form">
+                    <div class="form-group">
+                        <label for="tool-name">Tool Name</label>
+                        <input type="text" id="tool-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tool-category">Category</label>
+                        <select id="tool-category" required>
+                            <option value="">Select Category</option>
+                            <option value="network-scanning">Network Scanning</option>
+                            <option value="vulnerability-scanning">Vulnerability Scanning</option>
+                            <option value="penetration-testing">Penetration Testing</option>
+                            <option value="forensics">Digital Forensics</option>
+                            <option value="osint">OSINT</option>
+                            <option value="reverse-engineering">Reverse Engineering</option>
+                            <option value="web-security">Web Security</option>
+                            <option value="malware-analysis">Malware Analysis</option>
+                            <option value="cryptography">Cryptography</option>
+                            <option value="wireless-security">Wireless Security</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tool-description">Description</label>
+                        <textarea id="tool-description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tool-website">Official Website</label>
+                        <input type="url" id="tool-website">
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Tool</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Tool Detail Modal -->
+    <div id="tool-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- Tool details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="tools-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
